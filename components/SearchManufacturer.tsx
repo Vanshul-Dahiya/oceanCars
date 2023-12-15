@@ -7,7 +7,7 @@ import React from 'react'
 import { useState, Fragment } from 'react'
 import { manufacturers } from '@/constants'
 
-const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacturerProps) => {
+const SearchManufacturer = ({ selected, setSelected }: SearchManufacturerProps) => {
     const [query, setQuery] = useState('')
 
     // get list and then filter it -> if user types 'a' show content related to 'a' only and not 'b'
@@ -17,7 +17,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
 
     return (
         <div className='search-manufacturer'>
-            <Combobox value={manufacturer} onChange={setManufacturer} >
+            <Combobox value={selected} onChange={setSelected} >
                 <div className='relative w-full'>
                     <Combobox.Button className="absolute top-[14px]" >
                         <Image src="/car-logo.svg" width={20} height={20} className="ml-4" alt="car logo" />
